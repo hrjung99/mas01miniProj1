@@ -1,5 +1,5 @@
 package miniProj1.User;
 
-public class UserServlet {
+public class UserService {
 
 }

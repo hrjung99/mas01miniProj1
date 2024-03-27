@@ -1,4 +1,4 @@
-package miniProj1.Board;
+package miniProj1.User;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class BoardServlet
+ * Servlet implementation class UserServlet
  */
-@WebServlet("/BoardServlet")
-public class BoardServlet extends HttpServlet {
+@WebServlet("/UserServlet")
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardServlet() {
+    public UserServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

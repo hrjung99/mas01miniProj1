@@ -33,7 +33,7 @@
 	<div>
 		<h1>마이페이지</h1>
 		
-		<label>아이디<input type="text" id="mid" name="mid" required="required"></label><br/>
+		<label>아이디<input hidden type="text" id="mid" name="mid" disabled></label><br/>
 		<label>비밀번호<input type="password" id="mpass" name="mpass" required="required"></label><br/>
 		<label>비밀번호 확인<input type="text" id="mpass2" name="mpass2" required="required"></label><br/>
 		<label>이름<input type="text" id="mname" name="mname" required="required"></label><br/>
@@ -55,11 +55,9 @@
 	</div>
 	
 	<div>
-	<button>가입</button>
-	<button>취소</button>
+	<a>탈퇴</a>	
+	<a href="/miniProj1/jsp/member/MemberUpdate.jsp">수정</a>
 	</div>
 		
-		  
-	</div>
 	</body>
 </html>
