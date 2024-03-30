@@ -11,13 +11,14 @@ import lombok.NoArgsConstructor;
 public class MemberVO {
 	
 	public MemberVO(String mid, String mpass, String mname, String mage, String madd, String mpno, String mgender) {
-	this(mid, mpass, mname, mage, madd, mpno, mgender, "", "");
+	this(mid, mpass, mname, mage, madd, mpno, mgender, "", "", "");
 	}
 	
 
 		public MemberVO(String mpass, String mname, String mage, String madd, String mpno, String mgender) {
-		this("", mpass, mname, mage, madd, mpno, mgender, "", "");
+		this("", mpass, mname, mage, madd, mpno, mgender, "", "" ,"");
 	}
+		
 	
 	private String mid;
 	private String mpass;
@@ -29,6 +30,9 @@ public class MemberVO {
 	private String mpno;
 	private String mgender;
 	private String hobby;
+	
+	//실행 명령 필드
+	private String action;
 	
 	private String searchKey;
 

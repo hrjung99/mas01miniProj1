@@ -11,29 +11,11 @@
 </head>
 <body>
 
-	<div style = "background-color:#69B44D;">
-		<h1>배너</h1>
-	</div>
-	
-	<div style = "background-color:#98D7A5;">
-		<a href="MemberInsertForm.jsp">회원가입</a>
-		<a href="MemberList.jsp">회원관리</a> 
-		<a href="MemberView.jsp">마이페이지</a> 
-		<a href="LoginForm.jsp">로그인</a>
-		<a href="/miniProj1/index.html">로그아웃</a>
-	</div>
-	
-	<div style = "background-color:#8DC77B;">
-		<a href="/miniProj1/index.html">로고</a>
-		<a href="/miniProj1/jsp/introduce.jsp">모임 소개</a>
-		<a href="/miniProj1/jsp/news.jsp">예술 News</a>
-		<a href="/miniProj1/jsp/board/BoardList.jsp">커뮤니티</a>
-	</div>
 	
 	<div>
 		<h1>마이페이지</h1>
 		
-		<label>아이디<input hidden type="text" id="mid" name="mid" disabled></label><br/>
+		<label>아이디<input hidden="hidden" type="text" id="mid" name="mid" disabled></label><br/>
 		<label>비밀번호<input type="password" id="mpass" name="mpass" required="required"></label><br/>
 		<label>비밀번호 확인<input type="text" id="mpass2" name="mpass2" required="required"></label><br/>
 		<label>이름<input type="text" id="mname" name="mname" required="required"></label><br/>
@@ -55,9 +37,11 @@
 	</div>
 	
 	<div>
-	<a>탈퇴</a>	
-	<a href="/miniProj1/jsp/member/MemberUpdate.jsp">수정</a>
+	<a href ="/miniProj1/jsp/member/MemberView.jsp">수정</a>
+	<a href="/miniProj1/jsp/member/MemberView.jsp">취소</a>
 	</div>
 		
+		  
+	</div>
 	</body>
 </html>

@@ -3,8 +3,11 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
-	<display-name>helloWeb2</display-name>
+
+
+	<display-name>miniProj1</display-name>
 	<welcome-file-list>
+		<welcome-file>main.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -12,45 +15,19 @@
 		<welcome-file>default.jsp</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
-	
-	<servlet>
-		<servlet-name>helloName</servlet-name>
-		<servlet-class>com.msa2024.HelloServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>helloName</servlet-name>
-		<url-pattern>/hello</url-pattern>
-	</servlet-mapping>	
-	
-	<servlet>
-		<servlet-name>userServlet</servlet-name>
-		<servlet-class>com.msa2024.step2.UserServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>userServlet</servlet-name>
-		<url-pattern>/user.do</url-pattern>
-	</servlet-mapping>	
-
 
 	<servlet>
-		<servlet-name>boardsServlet</servlet-name>
-		<servlet-class>com.msa2024.board.step2.BoardServlet</servlet-class>
+		<servlet-name>MemberServlet</servlet-name>
+		<servlet-class>miniProj1.Member.MemberServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
-		<servlet-name>boardsServlet</servlet-name>
-		<url-pattern>/board.do</url-pattern>
-	</servlet-mapping>	
+		<servlet-name>MemberServlet</servlet-name>
+		<url-pattern>/member.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
 
 </web-app>
-
-
-
-
-
-
-
-
-
