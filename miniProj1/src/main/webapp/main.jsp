@@ -15,22 +15,22 @@
 		<h1>배너</h1>
 	</div>
 	
-	<div style = "background-color:#98D7A5;">
+	<nav style = "background-color:#98D7A5;">
 		<a href="member.do?action=insertForm">회원가입</a>
 		
 		<a href="member.do?action=list">회원관리</a> 
 		
-		<a href="/member.do?acrion=view">마이페이지</a> 
-		<a href="/miniProj1/WEB-INF/jsp/member/LoginForm.jsp">로그인</a>
+		<a href="member.do?action=view">마이페이지</a> 
+		<a href="member.do?action=loginForm">로그인</a>
 		<a href="/miniProj1/main.jsp">로그아웃</a>
-	</div>
+	</nav>
 	
-	<div style = "background-color:#8DC77B;">
-		<a href="/miniProj1/index.html">로고</a>
-		<a href="/miniProj1/WEB-INF/jsp/introduce.jsp">모임 소개</a>
-		<a href="/miniProj1/WEB-INF/jsp/news.jsp">예술 News</a>
-		<a href="/miniProj1/WEB-INF/jsp/board/BoardList.jsp">커뮤니티</a>
-	</div>
+	<nav style = "background-color:#8DC77B;">
+		<a href="/miniProj1/main.jsp">로고</a>
+		<a href="board.do?cmd=introduce">모임 소개</a>
+		<a href="board.do?cmd=news">예술 News</a>
+		<a href="board.do?cmd=list">커뮤니티</a>
+	</nav>
 	
 	<div>
 		<h1>메인 화면</h1>

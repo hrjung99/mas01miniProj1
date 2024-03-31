@@ -35,7 +35,7 @@ public class MemberDAO {
 			// 전체 조회
 			MemberListPstmt = conn.prepareStatement("select * from tb_member");
 			// 검색 조회
-			MemberListPstmt2 = conn.prepareStatement("select * from tb_member where like mname=?");
+			MemberListPstmt2 = conn.prepareStatement("select * from tb_member where mname like ?");
 			// 회원 가입
 			MemberInsertPstmt = conn.prepareStatement("insert into tb_member(mid, mpass, mname, mage, madd, mpno, mgender) values (?,?,?,?,?,?,?)"); // 취미
 			// 회원 탈퇴
@@ -43,8 +43,7 @@ public class MemberDAO {
 			// 마이페이지
 			MemberDetailPstmt = conn.prepareStatement("select * from tb_member where mid = ?");
 			// 회원정보 수정
-			MemberUpdatePstmt = conn.prepareStatement(
-					"update tb_member set mpass=?, mname=?, mage=?, madd=?, mpno=?, mgender=? where mid=?"); // 취미 추가
+			MemberUpdatePstmt = conn.prepareStatement("update tb_member set mpass=?, mname=?, mage=?, madd=?, mpno=?, mgender=? where mid=?"); // 취미 추가
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -61,8 +60,6 @@ public class MemberDAO {
 			int updated = 0;
 			ResultSet rs = null;
 			String searchKey = memberVO.getSearchKey();
-			;
-			// String searchKey = memberVO.getSearchKey();
 			// 검색O
 			if (searchKey != null && searchKey.length() != 0) {
 				MemberListPstmt2.setString(1, "%" + searchKey + "%");
@@ -73,8 +70,13 @@ public class MemberDAO {
 				rs = MemberListPstmt.executeQuery();
 			}
 			while (rs.next()) {
-				MemberVO member = new MemberVO(rs.getString("mid"), rs.getString("mpass"), rs.getString("mname"),
-						rs.getInt("mage"), rs.getString("madd"), rs.getString("mpno"), rs.getString("mgender"));
+				MemberVO member = new MemberVO(rs.getString("mid")
+						, rs.getString("mpass")
+						, rs.getString("mname")
+						,rs.getInt("mage")
+						, rs.getString("madd")
+						, rs.getString("mpno")
+						, rs.getString("mgender"));
 				// 취미추가
 				list.add(member);
 
@@ -182,5 +184,8 @@ public class MemberDAO {
 
 		return updated;
 	}
+	
+	
+	
 
 }

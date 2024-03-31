@@ -25,6 +25,16 @@
 		<servlet-name>MemberServlet</servlet-name>
 		<url-pattern>/member.do</url-pattern>
 	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>BoardServlet</servlet-name>
+		<servlet-class>miniProj1.Board.BoardServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BoardServlet</servlet-name>
+		<url-pattern>/board.do</url-pattern>
+	</servlet-mapping>
 
 
 

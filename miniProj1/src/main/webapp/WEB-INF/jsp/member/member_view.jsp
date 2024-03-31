@@ -129,7 +129,8 @@ function jsUpdate(){
 		const memberPno = document.getElementById("mpno").value;
 		const memberGender= document.getElementById("mgender").value;
 		
-    	console.log("viewForm")
+    	console.log("viewForm");
+    	
 			if (confirm("수정 하시겠습니까?")){
 				const param = {
 						action:"update",

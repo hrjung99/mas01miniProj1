@@ -11,17 +11,18 @@ import lombok.NoArgsConstructor;
 public class MemberVO {
 	
 	public MemberVO(String mid, String mpass, String mname, int mage, String madd, String mpno, String mgender) {
-	this(mid, mpass, mname, mage, madd, mpno, mgender, "", "", "");
+	this(mid, mpass,"", mname, mage, madd, mpno, mgender, "", "", "");
 	}
 	
 
 		public MemberVO(String mpass, String mname, int mage, String madd, String mpno, String mgender) {
-		this("", mpass, mname, mage, madd, mpno, mgender, "", "" ,"");
+		this("", mpass, "", mname, mage, madd, mpno, mgender, "", "" ,"");
 	}
 		
 	
 	private String mid;
 	private String mpass;
+	private String mpass2;
 
 	private String mname;
 	private int mage;
@@ -35,5 +36,13 @@ public class MemberVO {
 	
 	private String searchKey;
 	
+	
 
+	public boolean isEmptySearchKey() {
+		return searchKey == null || searchKey.length() == 0; 
+	}
+	
+	public boolean isEqualPassword(MemberVO memberVO) {
+		return memberVO != null && mpass.equals(memberVO.getMpass());
+	}
 }

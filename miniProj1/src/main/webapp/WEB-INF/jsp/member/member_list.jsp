@@ -50,7 +50,6 @@
 
 
 			<div>
-				<button onclick="board.do?acton=insert">글쓰기</button>
 
 				<form>
 					<table border="1">

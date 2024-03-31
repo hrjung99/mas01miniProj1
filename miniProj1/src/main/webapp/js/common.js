@@ -35,11 +35,11 @@ formId : formId 또는 json 연관배열
 handler : 서버에서 결과를 전달해주면 받아서 처리하는 함수 
 */
 
-const rimyFetch_insert = (url, formId, handler) => {
+const rimyFetch = (url, formId, handler) => {
 	
 	const param = typeof formId == "string" ? formToSerialize(formId) : JSON.stringify(formId);
 	fetch(url, {
-			action : insert,
+			action :action,
 			method:"POST",
 			body : param,
 			headers : {"Content-type" : "application/json; charset=utf-8"}
