@@ -76,7 +76,7 @@ public class MemberServlet extends HttpServlet {
 		// 검색은 나중에
 		// jsp 가 보낸데이터 타입 확인하고 받는 부분
 		String contentType = request.getContentType(); // 요청의 타입 확인
-		System.out.println("contentType111=" + contentType);
+		System.out.println("contentType000 =" + contentType);
 		ObjectMapper objectMapper = new ObjectMapper(); //자바 객체를 JSON 문자열로 변환 or JSON 데이터를 자바 객체 형태로 사용할 수 있게 해줌
 		
 		if (contentType == null || contentType.startsWith("application/x-www-form-urlencoded")) {
@@ -99,6 +99,8 @@ public class MemberServlet extends HttpServlet {
 		case "list" -> memberController.list(request, memberVO);
 		case "view" -> memberController.view(request, memberVO, response);
 		case "delete" -> memberController.delete(request, memberVO, response);
+		case "insertForm" -> memberController.insertForm(request, memberVO, response);
+		case "insert" -> memberController.insert(request, memberVO, response);
 		default -> ""; 
 		};
 		

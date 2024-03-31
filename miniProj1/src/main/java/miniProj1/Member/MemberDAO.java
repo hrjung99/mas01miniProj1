@@ -43,7 +43,8 @@ public class MemberDAO {
 			// 마이페이지
 			MemberDetailPstmt = conn.prepareStatement("select * from tb_member where mid = ?");
 			// 회원정보 수정
-			MemberUpdatePstmt = conn. prepareStatement("update tb_member set mpass=?, mname=?, mage=?, madd=?, mpno=?, mgender=? where mid=?"); // 취미 추가
+			MemberUpdatePstmt = conn.prepareStatement(
+					"update tb_member set mpass=?, mname=?, mage=?, madd=?, mpno=?, mgender=? where mid=?"); // 취미 추가
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -51,7 +52,7 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// list 함수 구현(+검색 기능)
 	public List<MemberVO> list(MemberVO memberVO) {
 		List<MemberVO> list = new ArrayList<MemberVO>();
@@ -59,8 +60,9 @@ public class MemberDAO {
 		try {
 			int updated = 0;
 			ResultSet rs = null;
-			String searchKey = null;
-			//String searchKey = memberVO.getSearchKey();
+			String searchKey = memberVO.getSearchKey();
+			;
+			// String searchKey = memberVO.getSearchKey();
 			// 검색O
 			if (searchKey != null && searchKey.length() != 0) {
 				MemberListPstmt2.setString(1, "%" + searchKey + "%");
@@ -99,14 +101,8 @@ public class MemberDAO {
 			MemberDetailPstmt.setString(1, memberVO.getMid());
 			ResultSet rs = MemberDetailPstmt.executeQuery();
 			if (rs.next()) {
-				view = new MemberVO(
-						memberVO.getMid()
-						, rs.getString("mpass")
-						, rs.getString("mname")
-						, rs.getInt("mage")
-						, rs.getString("madd")
-						, rs.getString("mpno")
-						, rs.getString("mgender"));
+				view = new MemberVO(memberVO.getMid(), rs.getString("mpass"), rs.getString("mname"), rs.getInt("mage"),
+						rs.getString("madd"), rs.getString("mpno"), rs.getString("mgender"));
 			}
 			rs.close();
 
@@ -114,15 +110,14 @@ public class MemberDAO {
 			e.printStackTrace();
 			e.getMessage();
 		}
-		System.out.println("DAO의 view="+view);
+		System.out.println("DAO의 view=" + view);
 
 		return view;
 	}
-	
-	
+
 	// delete 함수 구현
 	public int delete(MemberVO memberVO) {
-		
+
 		int updated = 0;
 
 		try {
@@ -137,34 +132,29 @@ public class MemberDAO {
 		return updated;
 	}
 
-//	// insert 함수 구현
-//	public String insert(MemberVO memberVO) {
-//		String mname = memberVO.getMname();
-//
-//		try {
-//			int updated = 0;
-//
-//			MemberInsertPstmt.executeUpdate();
-//			MemberInsertPstmt.setString(1, "mid");
-//			MemberInsertPstmt.setString(2, "mpass");
-//			MemberInsertPstmt.setString(3, "mname");
-//			MemberInsertPstmt.setInt(4, "mage");
-//			MemberInsertPstmt.setString(5, "mpno");
-//			MemberInsertPstmt.setString(6, "mgender");
-//			MemberInsertPstmt.setSring(7, "hobby");
-//
-//			updated = MemberInsertPstmt.executeUpdate();
-//
-//			conn.commit();
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			e.getMessage();
-//		}
-//
-//		return mname;
-//	}
+	// insert 함수 구현
+	public int insert(MemberVO memberVO) {
+		int updated = 0;
 
+		try {
+
+			MemberInsertPstmt.setString(1, memberVO.getMid());
+			MemberInsertPstmt.setString(2, memberVO.getMpass());
+			MemberInsertPstmt.setString(3, memberVO.getMname());
+			MemberInsertPstmt.setInt(4, memberVO.getMage());
+			MemberInsertPstmt.setString(5, memberVO.getMadd());
+			MemberInsertPstmt.setString(6, memberVO.getMpno());
+			MemberInsertPstmt.setString(7, memberVO.getMgender());
+			updated = MemberInsertPstmt.executeUpdate();
+			// 입력된 비밀번호와 비밀번호 확인이 같은지, 같지 않은지 유효성 검사
+			conn.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+		}
+
+		return updated;
+	}
 
 //
 //	// update 함수 구현

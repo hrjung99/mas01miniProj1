@@ -22,10 +22,9 @@ public class MemberVO {
 	
 	private String mid;
 	private String mpass;
+
 	private String mname;
 	private int mage;
-
-
 	private String madd;
 	private String mpno;
 	private String mgender;

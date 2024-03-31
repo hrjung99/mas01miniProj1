@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -16,7 +16,7 @@
 	</div>
 	
 	<div style = "background-color:#98D7A5;">
-		<a href="/miniProj1/WEB-INF/jsp/member/MemberInsertForm.jsp">회원가입</a>
+		<a href="member.do?action=insertForm">회원가입</a>
 		
 		<a href="member.do?action=list">회원관리</a> 
 		

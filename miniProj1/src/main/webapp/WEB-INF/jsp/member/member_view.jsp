@@ -16,7 +16,7 @@
 	</div>
 	
 	<div style = "background-color:#98D7A5;">
-		<a href="MemberInsertForm.jsp">회원가입</a>
+		<a href="member.do?action=insert">회원가입</a>
 		<a href="member.do?action=list">회원관리</a> 
 		<a href="MemberView.jsp">마이페이지</a> 
 		<a href="LoginForm.jsp">로그인</a>
@@ -74,7 +74,7 @@
 	} */
 	
 	const memberId = "${member.mid}";
-	console.log("ddd ", memberId)
+	console.log("memberID= ", memberId)
 
 	function jsDelete(){
 	    if(confirm("정말로 탈퇴하시겠습니까?")){
@@ -82,11 +82,13 @@
 	            action: "delete",
 	            mid: memberId
 	        };
+	        
 	        fetch("member.do", {
 	            method: "POST",
 	            body: JSON.stringify(param),
 	            headers: {"Content-type": "application/json; charset=utf-8"}
 	        })
+	        
 	        .then(res => res.json())
 	        .then(json => {
 	            if(json.status == 0) {

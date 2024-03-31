@@ -28,5 +28,10 @@ public class MemberService {
 		System.out.println("서비스-delete");
 		return memberDAO.delete(member);
 	}
+	
+	public int insert(MemberVO member) throws ServletException, IOException {
+		System.out.println("서비스-insert");
+		return memberDAO.insert(member);
+	}
 
 }
