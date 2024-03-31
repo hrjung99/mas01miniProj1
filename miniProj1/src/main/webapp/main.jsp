@@ -16,20 +16,20 @@
 	</div>
 	
 	<div style = "background-color:#98D7A5;">
-		<a href="jsp/member/MemberInsertForm.jsp">회원가입</a>
+		<a href="/miniProj1/WEB-INF/jsp/member/MemberInsertForm.jsp">회원가입</a>
 		
 		<a href="member.do?action=list">회원관리</a> 
 		
-		<a href="jsp/member/MemberView.jsp">마이페이지</a> 
-		<a href="jsp/member/LoginForm.jsp">로그인</a>
-		<a href="/miniProj1/index.html">로그아웃</a>
+		<a href="/miniProj1/WEB-INF/jsp/member/member_view.jsp">마이페이지</a> 
+		<a href="/miniProj1/WEB-INF/jsp/member/LoginForm.jsp">로그인</a>
+		<a href="/miniProj1/main.jsp">로그아웃</a>
 	</div>
 	
 	<div style = "background-color:#8DC77B;">
 		<a href="/miniProj1/index.html">로고</a>
-		<a href="jsp/introduce.jsp">모임 소개</a>
-		<a href="jsp/news.jsp">예술 News</a>
-		<a href="jsp/board/BoardList.jsp">커뮤니티</a>
+		<a href="/miniProj1/WEB-INF/jsp/introduce.jsp">모임 소개</a>
+		<a href="/miniProj1/WEB-INF/jsp/news.jsp">예술 News</a>
+		<a href="/miniProj1/WEB-INF/jsp/board/BoardList.jsp">커뮤니티</a>
 	</div>
 	
 	<div>

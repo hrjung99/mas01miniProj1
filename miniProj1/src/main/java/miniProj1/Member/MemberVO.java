@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MemberVO {
 	
-	public MemberVO(String mid, String mpass, String mname, String mage, String madd, String mpno, String mgender) {
+	public MemberVO(String mid, String mpass, String mname, int mage, String madd, String mpno, String mgender) {
 	this(mid, mpass, mname, mage, madd, mpno, mgender, "", "", "");
 	}
 	
 
-		public MemberVO(String mpass, String mname, String mage, String madd, String mpno, String mgender) {
+		public MemberVO(String mpass, String mname, int mage, String madd, String mpno, String mgender) {
 		this("", mpass, mname, mage, madd, mpno, mgender, "", "" ,"");
 	}
 		
@@ -23,7 +23,7 @@ public class MemberVO {
 	private String mid;
 	private String mpass;
 	private String mname;
-	private String mage;
+	private int mage;
 
 
 	private String madd;
@@ -35,5 +35,6 @@ public class MemberVO {
 	private String action;
 	
 	private String searchKey;
+	
 
 }

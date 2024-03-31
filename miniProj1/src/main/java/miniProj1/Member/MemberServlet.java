@@ -47,8 +47,9 @@ public class MemberServlet extends HttpServlet {
 		doService(request, response);
 	}
 	
+	
 	private Map<String, Object> convertMap(Map<String, String[]> map) {
-		Map<String, Object> result = new HashMap();
+		Map<String, Object> result = new HashMap<>();
 
 		for (var entry : map.entrySet()) {
 			if (entry.getValue().length == 1) {
@@ -68,30 +69,36 @@ public class MemberServlet extends HttpServlet {
 
 		MemberVO memberVO= null;	
 		System.out.println("서블릿 왔당");	
-		System.out.println("memberVO : "+ memberVO);
+		
+
+	
 		
 		// 검색은 나중에
 		// jsp 가 보낸데이터 타입 확인하고 받는 부분
 		String contentType = request.getContentType(); // 요청의 타입 확인
-		
+		System.out.println("contentType111=" + contentType);
 		ObjectMapper objectMapper = new ObjectMapper(); //자바 객체를 JSON 문자열로 변환 or JSON 데이터를 자바 객체 형태로 사용할 수 있게 해줌
 		
 		if (contentType == null || contentType.startsWith("application/x-www-form-urlencoded")) {
 			memberVO = objectMapper.convertValue(convertMap(request.getParameterMap()), MemberVO.class);
 		} else if (contentType.startsWith("application/json")) {
 			memberVO = objectMapper.readValue(request.getInputStream(), MemberVO.class);
-		}		
+		}
 		
-		//action 관련하여 값 받아서
-		String action = request.getParameter("action");
+		String action = memberVO.getAction();
+		
+		//action 관련하여 값 받아서출력
+		//String action = request.getParameter("action");
 		
 		System.out.println("action : " + action);
+
 		
 		
 		//분배
 		Object result = switch(action) {
 		case "list" -> memberController.list(request, memberVO);
 		case "view" -> memberController.view(request, memberVO, response);
+		case "delete" -> memberController.delete(request, memberVO, response);
 		default -> ""; 
 		};
 		
@@ -105,15 +112,12 @@ public class MemberServlet extends HttpServlet {
 				response.sendRedirect(url.substring("ridirect:".length()));
 			} else {
 				//포워딩 
+				System.out.println("url=" + url);
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/member/"+"member_"+url+".jsp");
 				rd.forward(request, response);
-			}
-			
+			}			
 		}
-		
-		
-		
-
+		System.out.println("memberVO : "+ memberVO);
 
 	}
 

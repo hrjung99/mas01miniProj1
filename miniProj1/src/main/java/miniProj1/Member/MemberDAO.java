@@ -14,7 +14,7 @@ public class MemberDAO {
 	private static PreparedStatement MemberInsertPstmt = null; // 회원 가입
 	private static PreparedStatement MemberInsertHobbyPstmt = null; // 회원 가입(취미)
 
-	private static PreparedStatement MemberDletePstmt = null; // 회원 탈퇴
+	private static PreparedStatement MemberDeletePstmt = null; // 회원 탈퇴
 	private static PreparedStatement MemberDetailPstmt = null; // 마이페이지
 	private static PreparedStatement MemberUpdatePstmt = null;// 회원 수정
 	private static PreparedStatement MemberUpdateHobbyPstmt = null;// 회원 수정(취미)
@@ -39,7 +39,7 @@ public class MemberDAO {
 			// 회원 가입
 			MemberInsertPstmt = conn.prepareStatement("insert into tb_member(mid, mpass, mname, mage, madd, mpno, mgender) values (?,?,?,?,?,?,?)"); // 취미
 			// 회원 탈퇴
-			MemberDletePstmt = conn.prepareStatement("delete from tb_member where=?");
+			MemberDeletePstmt = conn.prepareStatement("delete from tb_member where mid=?");
 			// 마이페이지
 			MemberDetailPstmt = conn.prepareStatement("select * from tb_member where mid = ?");
 			// 회원정보 수정
@@ -72,7 +72,7 @@ public class MemberDAO {
 			}
 			while (rs.next()) {
 				MemberVO member = new MemberVO(rs.getString("mid"), rs.getString("mpass"), rs.getString("mname"),
-						rs.getString("mage"), rs.getString("madd"), rs.getString("mpno"), rs.getString("mgender"));
+						rs.getInt("mage"), rs.getString("madd"), rs.getString("mpno"), rs.getString("mgender"));
 				// 취미추가
 				list.add(member);
 
@@ -103,7 +103,7 @@ public class MemberDAO {
 						memberVO.getMid()
 						, rs.getString("mpass")
 						, rs.getString("mname")
-						, rs.getString("mage")
+						, rs.getInt("mage")
 						, rs.getString("madd")
 						, rs.getString("mpno")
 						, rs.getString("mgender"));
@@ -114,33 +114,28 @@ public class MemberDAO {
 			e.printStackTrace();
 			e.getMessage();
 		}
-		System.out.println("view="+view);
+		System.out.println("DAO의 view="+view);
 
 		return view;
 	}
 	
 	
-//	// delete 함수 구현
-//	public String delete(MemberVO memberVO) {
-//		String mname = memberVO.getMname();
-//
-//		try
-//
-//		{
-//
-//			int updated = 0;
-//
-//			MemberDletePstmt.setString(1, "mid");
-//			updated = MemberDletePstmt.executeUpdate();
-//
-//			conn.commit();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			e.getMessage();
-//		}
-//
-//		return mname;
-//	}
+	// delete 함수 구현
+	public int delete(MemberVO memberVO) {
+		
+		int updated = 0;
+
+		try {
+			MemberDeletePstmt.setString(1, memberVO.getMid());
+			updated = MemberDeletePstmt.executeUpdate();
+			conn.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+		}
+		System.out.println("DAO - delete()의 updated = " + updated);
+		return updated;
+	}
 
 //	// insert 함수 구현
 //	public String insert(MemberVO memberVO) {
@@ -153,7 +148,7 @@ public class MemberDAO {
 //			MemberInsertPstmt.setString(1, "mid");
 //			MemberInsertPstmt.setString(2, "mpass");
 //			MemberInsertPstmt.setString(3, "mname");
-//			MemberInsertPstmt.setString(4, "mage");
+//			MemberInsertPstmt.setInt(4, "mage");
 //			MemberInsertPstmt.setString(5, "mpno");
 //			MemberInsertPstmt.setString(6, "mgender");
 //			MemberInsertPstmt.setSring(7, "hobby");
@@ -181,7 +176,7 @@ public class MemberDAO {
 //		try {
 //			MemberUpdatePstmt.setString(1, memberVO.getMpass());
 //			MemberUpdatePstmt.setString(2, memberVO.getMname());
-//			MemberUpdatePstmt.setString(3, memberVO.getMage());
+//			MemberUpdatePstmt.setInt(3, memberVO.getMage());
 //			MemberUpdatePstmt.setString(4, memberVO.getMadd());
 //			MemberUpdatePstmt.setString(5, memberVO.getMpno());
 //			MemberUpdatePstmt.setString(6, memberVO.getMgender());
