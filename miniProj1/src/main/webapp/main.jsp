@@ -19,7 +19,7 @@
 		<a href="member.do?action=insertForm">회원가입</a>
 		
 		<a href="member.do?action=list">회원관리</a> 
-		
+			 
 		<a href="member.do?action=view">마이페이지</a> 
 		<a href="member.do?action=loginForm">로그인</a>
 		<a href="/miniProj1/main.jsp">로그아웃</a>

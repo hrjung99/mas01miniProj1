@@ -36,6 +36,8 @@
 
 		
 	</div>
+
+	
 	<form id="viewForm" name="viewForm" action="board.do" method="get">
 		<input type="hidden" id="cmd" name = "cmd" value="">
 		<label>게시물 번호<input type = "text" id="bno" value ="${board.bno}" readonly="readonly" ></label><br/>

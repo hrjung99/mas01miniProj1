@@ -37,7 +37,7 @@ public class BoardDAO {
 			// 검색 조회
 			BoardListPstmt2 = conn.prepareStatement("SELECT B.BNO,B.BTITLE, B.BCONTENT, M.MNAME, B.BDATE FROM TB_BOARD B INNER JOIN TB_MEMBER M ON B.MID=M.MID WHERE btitle LIKE ? ");
 			// 게시물 등록
-			BoardInsertPstmt = conn.prepareStatement("insert into tb_board(btitle, bcontent, bdate, mid) values (?,?,current_timestamp(),?)");
+			BoardInsertPstmt = conn.prepareStatement("insert into tb_board(btitle, bcontent, bdate, mid) values (?,?,current_timestamp(), ?)");
 			// 게시물 삭제
 			BoardDeletePstmt = conn.prepareStatement("delete from tb_board where bno=?");
 			// 게시물 상세 보기
@@ -49,7 +49,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}	
 	}
 
 	// list 함수 구현(+검색 기능)
@@ -153,7 +153,7 @@ public class BoardDAO {
 
 			BoardInsertPstmt.setString(1, boardVO.getBtitle());
 			BoardInsertPstmt.setString(2, boardVO.getBcontent());
-			BoardInsertPstmt.setString(3, boardVO.getMname());
+			BoardInsertPstmt.setString(3, boardVO.getMid());
 
 			updated = BoardInsertPstmt.executeUpdate();
 			// 입력된 비밀번호와 비밀번호 확인이 같은지, 같지 않은지 유효성 검사

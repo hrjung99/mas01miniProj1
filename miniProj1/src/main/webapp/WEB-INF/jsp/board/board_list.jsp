@@ -37,13 +37,20 @@
 		<h1>게시글 목록</h1>
 
 		<div>
+
 			<form id="searchFrom" action=board.do method="get">
-				<input type="hidden" id="cmd" name="cmd" value="list"> <label>제목</label>
-				<input type="text" id="searchKey" name="searchKey" value="${param.searchKey}"> <input type="submit" value="검색">
+				<input type="hidden" id="cmd" name="cmd" value="list"> 
+				<label>제목</label> <input type="text" id="searchKey" name="searchKey" value="${param.searchKey}"> 
+				<input type="submit" value="검색">
 			</form>
+			
+		<form action="board.do" method="get">
+			<input type="hidden" id="cmd" name="cmd" value="insertForm">
+			<input type="submit" value="글쓰기" >
+		</form>		
 		</div>
 
-
+		
 		<form id="ListForm" name="ListForm" action=board.do method="get">
 			<input type="hidden" id="cmd" name="cmd" value="list">
 		</form>
