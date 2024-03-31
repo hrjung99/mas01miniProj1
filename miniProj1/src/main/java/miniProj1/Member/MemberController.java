@@ -62,12 +62,27 @@ public class MemberController {
 		
 		int updated = memberService.insert(member);
 				
+			Map<String, Object> map = new HashMap<>();
+			if(updated ==1) {
+			map.put("status", 0);
+		}else {
+			map.put("status", -99);
+			map.put("statusMessage", "회원 가입에 실패하였습니다.");
+		}
+		return map;
+	}
+	
+	public Object update(HttpServletRequest request, MemberVO member, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("컨트롤러 - update 왔음");
+		
+		int updated = memberService.update(member);
+				
 		Map<String, Object> map = new HashMap<>();
 		if(updated ==1) {
 			map.put("status", 0);
 		}else {
 			map.put("status", -99);
-			map.put("statusMessage", "회원 가입에 실패하였습니다.");
+			map.put("statusMessage", "회원 수정에 실패하였습니다.");
 		}
 		return map;
 	}

@@ -33,5 +33,10 @@ public class MemberService {
 		System.out.println("서비스-insert");
 		return memberDAO.insert(member);
 	}
+	
+	public int update(MemberVO member) throws ServletException, IOException {
+		System.out.println("서비스-update");
+		return memberDAO.update(member);
+	}
 
 }

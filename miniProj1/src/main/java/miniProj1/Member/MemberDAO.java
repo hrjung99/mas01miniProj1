@@ -156,30 +156,31 @@ public class MemberDAO {
 		return updated;
 	}
 
-//
-//	// update 함수 구현
-//
-//	public String update(MemberVO memberVO) {
-//		String mname = memberVO.getMname();
-//		int updated = 0;
-//
-//		try {
-//			MemberUpdatePstmt.setString(1, memberVO.getMpass());
-//			MemberUpdatePstmt.setString(2, memberVO.getMname());
-//			MemberUpdatePstmt.setInt(3, memberVO.getMage());
-//			MemberUpdatePstmt.setString(4, memberVO.getMadd());
-//			MemberUpdatePstmt.setString(5, memberVO.getMpno());
-//			MemberUpdatePstmt.setString(6, memberVO.getMgender());
-//
-//			updated = MemberUpdatePstmt.executeUpdate();
-//
-//			conn.commit();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			e.getMessage();
-//		}
-//
-//		return mname;
-//	}
-//
+
+	// update 함수 구현
+
+	public int update(MemberVO memberVO) {
+		int updated = 0;
+
+		try {
+			MemberUpdatePstmt.setString(1, memberVO.getMpass());
+			MemberUpdatePstmt.setString(2, memberVO.getMname());
+			MemberUpdatePstmt.setInt(3, memberVO.getMage());
+			MemberUpdatePstmt.setString(4, memberVO.getMadd());
+			MemberUpdatePstmt.setString(5, memberVO.getMpno());
+			MemberUpdatePstmt.setString(6, memberVO.getMgender());
+			MemberUpdatePstmt.setString(7, memberVO.getMid());
+
+
+			updated = MemberUpdatePstmt.executeUpdate();
+
+			conn.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+		}
+
+		return updated;
+	}
+
 }
