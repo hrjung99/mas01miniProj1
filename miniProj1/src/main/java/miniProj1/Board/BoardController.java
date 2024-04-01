@@ -88,6 +88,15 @@ public class BoardController {
 	}
 	
 	
+	public Object news(HttpServletRequest request, BoardVO board, HttpServletResponse response ) throws ServletException, IOException {
+		System.out.println("board 컨트롤러 - news 왔음");
+		return "news";
+	}
+	
+	public Object introduce(HttpServletRequest request, BoardVO board, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("board 컨트롤러 - introduce 왔음");
+		return "introduce";
+	}
 	
 
 }

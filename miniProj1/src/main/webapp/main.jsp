@@ -1,5 +1,5 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -7,37 +7,109 @@
 <head>
 <meta charset="UTF-8">
 <title>예술</title>
-<link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/miniProj1/src/main/webapp/images/icon/favicon.ico">
+<style>
+    /* 메인 네비게이션 스타일 */
+    .main-nav a {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 4px 0;
+        border: 2px solid #69B44D;
+        background-color: #98D7A5;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 20px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .main-nav a:hover {
+        background-color: #69B44D;
+        color: white;
+    }
+
+    .main-nav {
+        padding: 10px 0;
+        background-color: #8DC77B;
+        text-align: left;
+    }
+
+    .user-nav {
+        background-color: #8DC77B;
+        padding: 10px;
+        text-align: right;
+    }
+
+    .user-nav a {
+        margin: 0 5px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .content img {
+        margin: 10px;
+        flex-grow: 1;
+        object-fit: cover;
+    }
+
+    /* 새로운 이미지 크기 조합 */
+    .img1 { width: 200px; height: 300px; }
+    .img2 { width: 310px; height: 220px; }
+    .img3 { width: 270px; height: 270px; }
+    .img4 { width: 220px; height: 210px; }
+
+    /* 푸터 스타일 */
+    .footer {
+        padding: 20px;
+        background-color: #69B44D;
+        color: white;
+        text-align: left; /* 수정됨 */
+        font-size: 16px;
+        border-top: 3px solid #98D7A5;
+    }
+</style>
 </head>
 <body>
 
-	<div style = "background-color:#69B44D;">
-		<h1>배너</h1>
-	</div>
-	
-	<nav style = "background-color:#98D7A5;">
-		<a href="member.do?action=insertForm">회원가입</a>
-		
-		<a href="member.do?action=list">회원관리</a> 
-			 
-		<a href="member.do?action=view">마이페이지</a> 
-		<a href="member.do?action=loginForm">로그인</a>
-		<a href="/miniProj1/main.jsp">로그아웃</a>
-	</nav>
-	
-	<nav style = "background-color:#8DC77B;">
-		<a href="/miniProj1/main.jsp">로고</a>
-		<a href="board.do?cmd=introduce">모임 소개</a>
-		<a href="board.do?cmd=news">예술 News</a>
-		<a href="board.do?cmd=list">커뮤니티</a>
-	</nav>
-	
-	<div>
-		<h1>메인 화면</h1>
-	</div>
-	
-	
+<div class="banner">
+    <h1>배너</h1>
+</div>
 
+<div class="user-nav">
+    <a href="member.do?action=insertForm">회원가입</a>
+    <a href="member.do?action=list">회원관리</a>
+    <a href="member.do?action=view">마이페이지</a>
+    <a href="member.do?action=loginForm">로그인</a>
+    <a href="/miniProj1/main.jsp">로그아웃</a>
+</div>
+
+<div class="container">
+    <nav class="main-nav">
+        <a href="/miniProj1/main.jsp">로고</a>
+        <a href="board.do?cmd=introduce">모임 소개</a>
+        <a href="board.do?cmd=news">예술 News</a>
+        <a href="board.do?cmd=list">커뮤니티</a>
+    </nav>
+</div>
+
+<div class="content">
+    <img src="images/image01.jpg" class="img1" alt="Art 1">
+    <img src="images/image02.jpg" class="img2" alt="Art 2">
+    <img src="images/image03.jpg" class="img3" alt="Art 3">
+    <img src="images/image04.jpg" class="img4" alt="Art 4">
+</div>
+
+<!-- Footer 추가 -->
+<div class="footer">
+    <p>&copy; 2024 예술. 모든 권리 보유.</p>
+</div>
 
 </body>
 </html>

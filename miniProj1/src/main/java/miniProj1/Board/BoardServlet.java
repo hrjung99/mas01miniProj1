@@ -102,6 +102,9 @@ public class BoardServlet extends HttpServlet {
 		case "insertForm" -> boardController.insertForm(request, boardVO, response);
 		case "insert" -> boardController.insert(request, boardVO, response);
 		case "update" ->boardController.update(request, boardVO, response);
+		
+		case "news"->boardController.news(request, boardVO, response);
+		case "introduce" ->boardController.introduce(request, boardVO, response);
 		default -> ""; 
 		};
 		

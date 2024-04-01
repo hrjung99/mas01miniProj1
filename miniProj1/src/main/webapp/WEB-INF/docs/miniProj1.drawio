@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2024-03-31T19:04:23.031Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="VHicJJfoIAaqI5Wrn9B5" version="24.1.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-04-01T00:09:45.356Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="yYDNeGmrsnyrfDBBzf28" version="24.1.0" type="device">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2875" dy="1883" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="5143" dy="3209" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="1OnyUaxKHy71_ISLedoz-434" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="-835" y="1230" width="1770" height="1480" as="geometry" />
+          <mxGeometry x="-788.5" y="1265" width="1770" height="1480" as="geometry" />
         </mxCell>
         <mxCell id="cMTieieWDEyPHcJreFlI-405" value=" " style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-840" y="-540" width="3060" height="1620" as="geometry" />
@@ -73,7 +73,7 @@
         <mxCell id="n92OYu4wm4hoa8Yo8Qmy-1143" value="대충&lt;div&gt;술 이미지&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#82b366;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=16;fillColor=#d5e8d4;opacity=60;" parent="n92OYu4wm4hoa8Yo8Qmy-1127" vertex="1">
           <mxGeometry x="110" y="130" width="140" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="n92OYu4wm4hoa8Yo8Qmy-1141" value="&lt;h1 style=&quot;margin-top: 0px; font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;예술&lt;/font&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;이란?&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;&quot;예, 술입니다&quot;의 준말로,&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;술을 즐기는 자들의 모임으로 시작하여, 외에도 맛집, 게임, 운동 등 서로취미를 공유하며 커진 모임입니다.&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=16;fontColor=default;" parent="n92OYu4wm4hoa8Yo8Qmy-1127" vertex="1">
+        <mxCell id="n92OYu4wm4hoa8Yo8Qmy-1141" value="&lt;h1 style=&quot;margin-top: 0px; font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;예술&lt;/font&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;이란?&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;font-size: 13px;&quot;&gt;&amp;nbsp;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=16;fontColor=default;" parent="n92OYu4wm4hoa8Yo8Qmy-1127" vertex="1">
           <mxGeometry x="21.13" y="180" width="237.75" height="142" as="geometry" />
         </mxCell>
         <mxCell id="n92OYu4wm4hoa8Yo8Qmy-1180" value="예술 News" style="rounded=1;whiteSpace=wrap;html=1;" parent="n92OYu4wm4hoa8Yo8Qmy-1127" vertex="1">
